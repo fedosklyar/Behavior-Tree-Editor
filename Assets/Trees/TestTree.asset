@@ -15,7 +15,12 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 324fb9937d4b20d4cbca12bdea25177b
-  position: {x: 429.19412, y: 162.48535}
+  position: {x: 85.60002, y: 162.00005}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    moveToObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: ssssssssssssssssssss
   duration: 1
 --- !u!114 &-6016247312261577703
 MonoBehaviour:
@@ -32,7 +37,12 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 2eab73bc25637a7478c34c1d9c530be9
-  position: {x: 429.5999, y: 261.77032}
+  position: {x: -96.3888, y: 138.40001}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    moveToObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
   message: 333
 --- !u!114 &-2844723729705149865
 MonoBehaviour:
@@ -49,8 +59,13 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 7a25c36b4be5184489a510ca477ba7f0
-  position: {x: -165.44191, y: 110.40002}
-  child: {fileID: 420279803412972305}
+  position: {x: 112.40003, y: -355.8096}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    moveToObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  child: {fileID: 8323787432384815941}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,6 +89,10 @@ MonoBehaviour:
   - {fileID: 2048475509197803525}
   - {fileID: -6016247312261577703}
   - {fileID: 4750901259414745894}
+  - {fileID: 8323787432384815941}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    moveToObject: {fileID: 0}
 --- !u!114 &420279803412972305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,14 +108,19 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 8270c8b4c201a6a4a868968093664e2f
-  position: {x: 206.79407, y: 108.885315}
+  position: {x: 112.80002, y: -70.40001}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    moveToObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
   children:
-  - {fileID: 2048475509197803525}
-  - {fileID: 9090908962620484701}
-  - {fileID: 6071094360390152011}
-  - {fileID: -8643659551415803579}
-  - {fileID: -6016247312261577703}
   - {fileID: 4750901259414745894}
+  - {fileID: -6016247312261577703}
+  - {fileID: -8643659551415803579}
+  - {fileID: 6071094360390152011}
+  - {fileID: 9090908962620484701}
+  - {fileID: 2048475509197803525}
 --- !u!114 &2048475509197803525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,7 +136,12 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 84eaba74bfd8f3d459846bd8d998383d
-  position: {x: 429.60004, y: -194.63309}
+  position: {x: 591.5983, y: 130}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    moveToObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
   message: 111
 --- !u!114 &4750901259414745894
 MonoBehaviour:
@@ -129,7 +158,12 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 47dbae9b8a1ce374fb32c0f23da0585b
-  position: {x: 429.60007, y: 398.25235}
+  position: {x: -275.1999, y: 73.6}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    moveToObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
   duration: 1
 --- !u!114 &6071094360390152011
 MonoBehaviour:
@@ -146,8 +180,35 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 1a61e2f53e6ae6846ab874667b9d9aae
-  position: {x: 429.19412, y: 57.685333}
+  position: {x: 236.00014, y: 162.40001}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    moveToObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
   message: 222
+--- !u!114 &8323787432384815941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b0a6c922108bcb41902968632f747bd, type: 3}
+  m_Name: RepeatNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 4238b5f1da88e9040b5e4fa8ad0a8b03
+  position: {x: 112.79999, y: -228.25182}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    moveToObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  child: {fileID: 420279803412972305}
 --- !u!114 &9090908962620484701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,5 +224,10 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 0ae9181dffef41b4b98ce2022b2892b6
-  position: {x: 441.99405, y: -67.91467}
+  position: {x: 397.6001, y: 144.00002}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    moveToObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
   duration: 1

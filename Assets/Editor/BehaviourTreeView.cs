@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using JetBrains.Annotations;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine.UIElements;
@@ -22,6 +23,15 @@ public class BehaviourTreeView : GraphView
 
         var styleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>("Assets/Editor/BehaviourTreeEditor.uss");
         styleSheets.Add(styleSheet); //vorsicht! Can be missed
+
+        Undo.undoRedoPerformed += OnUndoRedo;
+    }
+
+    //For the reloading of the window after calling Undo operation
+    private void OnUndoRedo()
+    {
+        PopulateView(tree);
+        AssetDatabase.SaveAssets();
     }
 
     internal void PopulateView(BehaviourTree tree)
@@ -106,6 +116,15 @@ public class BehaviourTreeView : GraphView
 
             }
         }
+
+        if (graphViewChange.movedElements != null)
+        {
+            nodes.ForEach((n) =>
+            {
+                NodeView view = n as NodeView;
+                view.SortChildren();
+            });
+        }
         return graphViewChange;
     }
 
@@ -149,6 +168,15 @@ public class BehaviourTreeView : GraphView
         NodeView nodeView = new NodeView(node);
         nodeView.OnNodeSelected = OnNodeSelected;
         AddElement(nodeView);
+    }
+
+    public void UpdateNodeState()
+    {
+        nodes.ForEach(n =>
+        {
+            NodeView nodeView = n as NodeView;
+            nodeView.UpdateState();
+        });
     }
     
 }

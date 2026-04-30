@@ -10,6 +10,7 @@ public class BehaviourTreeRunner : MonoBehaviour
     void Start()
     {
         tree = tree.Clone();
+        tree.Bind(GetComponent<AiAgent>()); //The Both the Runner and the AiAgent should be attached to the GameObject 
     }
 
     void Update()
