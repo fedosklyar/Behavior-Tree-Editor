@@ -11,7 +11,9 @@ public class BehaviourTree : ScriptableObject
     public Node rootNode;
     public Node.State treeState = Node.State.Running;
     public List<Node> nodes = new List<Node>();
-    public Blackboard blackboard = new Blackboard();
+    public Blackboard blackboard
+    // = new Blackboard()
+    ;
 
     public Node.State Update()
     {
@@ -145,11 +147,13 @@ public class BehaviourTree : ScriptableObject
         BehaviourTree tree = Instantiate(this);
         tree.rootNode = tree.rootNode.Clone();
         tree.nodes = new List<Node>();
+        tree.blackboard = blackboard.Clone();
 
         //Copies the list of the nodes for the clone of the tree
         Traverse(tree.rootNode, (n) =>
         {
             tree.nodes.Add(n);
+            n.blackboard = tree.blackboard;
         });
 
         return tree;

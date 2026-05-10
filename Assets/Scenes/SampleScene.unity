@@ -211,21 +211,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1268560294735226, guid: 68617247be1cad64d8dfe7e3cbbb3174, type: 3}
   m_PrefabInstance: {fileID: 1720484782}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &145057877
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 145057874}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5281785fbe32be4488391fbe4acda0d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  useCharacterForward: 0
-  sprintJoystick: 332
-  sprintKeyboard: 304
 --- !u!136 &145057878
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -276,6 +261,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &145057880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145057874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7dd4fc70f50c547994bfef113b1c7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useCharacterForward: 0
+  sprintJoystick: 332
+  sprintKeyboard: 32
 --- !u!1 &252704742
 GameObject:
   m_ObjectHideFlags: 3
@@ -1346,7 +1346,7 @@ PrefabInstance:
       addedObject: {fileID: 145057878}
     - targetCorrespondingSourceObject: {fileID: 1268560294735226, guid: 68617247be1cad64d8dfe7e3cbbb3174, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 145057877}
+      addedObject: {fileID: 145057880}
   m_SourcePrefab: {fileID: 100100000, guid: 68617247be1cad64d8dfe7e3cbbb3174, type: 3}
 --- !u!1001 &1819261152
 PrefabInstance:
@@ -1408,11 +1408,35 @@ PrefabInstance:
       propertyPath: sprintKeyboard
       value: 304
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114640801015031044, guid: f9dee39d229a4bb4087224760ba2d338, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1967615714690980, guid: f9dee39d229a4bb4087224760ba2d338, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1819261154}
   m_SourcePrefab: {fileID: 100100000, guid: f9dee39d229a4bb4087224760ba2d338, type: 3}
+--- !u!1 &1819261153 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1967615714690980, guid: f9dee39d229a4bb4087224760ba2d338, type: 3}
+  m_PrefabInstance: {fileID: 1819261152}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1819261154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819261153}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7dd4fc70f50c547994bfef113b1c7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useCharacterForward: 0
+  sprintJoystick: 332
+  sprintKeyboard: 32
 --- !u!1 &2123546574
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,10 +9,12 @@
                     <ui:Label text="Inspector" display-tooltip-when-elided="true" style="background-color: rgb(37, 37, 37);" />
                     <InspectorView />
                 </ui:VisualElement>
-                <ui:VisualElement name="blackboard-container">
-                    <ui:Label text="Blackboard" display-tooltip-when-elided="true" style="background-color: rgb(37, 37, 37);" />
-                    <ui:IMGUIContainer />
-                </ui:VisualElement>
+                <ui:ScrollView>
+                    <ui:VisualElement name="blackboard-container">
+                        <ui:Label text="Blackboard" display-tooltip-when-elided="true" style="background-color: rgb(37, 37, 37);" />
+                        <ui:IMGUIContainer />
+                    </ui:VisualElement>
+                </ui:ScrollView>
             </SplitView>
         </ui:VisualElement>
         <ui:VisualElement name="right-panel">

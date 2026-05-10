@@ -15,6 +15,8 @@ public class BehaviourTreeEditor : EditorWindow
     SerializedObject treeObject;
     SerializedProperty blackboardProperty;
 
+    Editor blackboardEditor;
+
     [MenuItem("BehaviourTreeEditor/Editor ... ")]
     public static void OpenWindow()
     {
@@ -52,9 +54,22 @@ public class BehaviourTreeEditor : EditorWindow
         blackboardView = root.Q<IMGUIContainer>();
         blackboardView.onGUIHandler = () =>
         {
+            if (treeObject == null) return;
+
             treeObject.Update();
             EditorGUILayout.PropertyField(blackboardProperty);
             treeObject.ApplyModifiedProperties();
+
+            if (blackboardProperty.objectReferenceValue != null)
+            {
+                EditorGUILayout.Space();
+                EditorGUILayout.LabelField("Blackboard Data", EditorStyles.boldLabel);
+
+                // This is the magic part: it creates an editor for the Blackboard asset 
+                // and draws it right here in the window.
+                Editor.CreateCachedEditor(blackboardProperty.objectReferenceValue, null, ref blackboardEditor);
+                blackboardEditor.OnInspectorGUI();
+            }
         };
 
         treeView.OnNodeSelected = OnNodeSelectionChanged;
