@@ -1071,7 +1071,7 @@ Transform:
   m_GameObject: {fileID: 1466499898}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 63.76, y: 0.602, z: 41.36574}
+  m_LocalPosition: {x: 66.53, y: 0.602, z: 43.04}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1373,8 +1373,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1775749218}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.33103964, y: 0.31635377, z: -0.11885372, w: 0.881026}
+  m_LocalPosition: {x: 54.39489, y: 19.691023, z: 28.683933}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1429,6 +1429,7 @@ GameObject:
   - component: {fileID: 1879797420}
   - component: {fileID: 1879797419}
   - component: {fileID: 1879797418}
+  - component: {fileID: 1879797422}
   m_Layer: 0
   m_Name: Ai-agent
   m_TagString: Untagged
@@ -1522,6 +1523,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1879797422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879797417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6442a678afa8b7b46ab33f00804b16bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tree: {fileID: 11400000, guid: 15febe070a299854f9d8121c8a056800, type: 2}
+  localValues:
+  - key: doors
+    valueType: 5
+    primitiveValue: 
+    objectValue: {fileID: 598445117}
+  - key: doorsTransform
+    valueType: 4
+    primitiveValue: 
+    objectValue: {fileID: 598445121}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

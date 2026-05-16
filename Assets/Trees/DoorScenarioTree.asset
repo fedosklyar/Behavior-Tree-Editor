@@ -1,5 +1,26 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5273598568990830310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fd4fee549ca3544a966a739a0e51325, type: 3}
+  m_Name: DoorsOpen
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: c5fdd95fbfdefad4691e957db68ac95b
+  position: {x: -282.40005, y: 108.62002}
+  blackboard: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  invert: 0
+  objectKey: 
 --- !u!114 &-1462899683536666349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32,7 +53,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 61fdffb428296844390d81be059898c5, type: 3}
-  m_Name: DemoTree
+  m_Name: DoorScenarioTree
   m_EditorClassIdentifier: 
   rootNode: {fileID: 6724052787826397761}
   treeState: 0
@@ -41,7 +62,8 @@ MonoBehaviour:
   - {fileID: -1462899683536666349}
   - {fileID: 3350160573299381890}
   - {fileID: 1258855477558965253}
-  blackboard: {fileID: 11400000, guid: ae1b4d27a8b707e4a9f6b99047a6ece4, type: 2}
+  - {fileID: -5273598568990830310}
+  blackboard: {fileID: 11400000, guid: f501dc276b12b224bad9ea65630188c3, type: 2}
 --- !u!114 &1258855477558965253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,11 +99,12 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: f57158229a8c46b42a09a9f21de3b75f
-  position: {x: -107.99996, y: -104.800026}
+  position: {x: -132.79999, y: -104.8}
   blackboard: {fileID: 0}
   agent: {fileID: 0}
   description: 
-  children: []
+  children:
+  - {fileID: -5273598568990830310}
 --- !u!114 &6724052787826397761
 MonoBehaviour:
   m_ObjectHideFlags: 0
