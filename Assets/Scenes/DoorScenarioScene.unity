@@ -233,7 +233,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &598445118
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1071,7 +1071,7 @@ Transform:
   m_GameObject: {fileID: 1466499898}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 66.53, y: 0.602, z: 43.04}
+  m_LocalPosition: {x: 66.53, y: 0.602, z: 40.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1430,6 +1430,7 @@ GameObject:
   - component: {fileID: 1879797419}
   - component: {fileID: 1879797418}
   - component: {fileID: 1879797422}
+  - component: {fileID: 1879797423}
   m_Layer: 0
   m_Name: Ai-agent
   m_TagString: Untagged
@@ -1545,6 +1546,22 @@ MonoBehaviour:
     valueType: 4
     primitiveValue: 
     objectValue: {fileID: 598445121}
+  - key: enemyTransform
+    valueType: 4
+    primitiveValue: 
+    objectValue: {fileID: 1466499902}
+--- !u!114 &1879797423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879797417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2f361960c9d3fb48a0591d7f783cadd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

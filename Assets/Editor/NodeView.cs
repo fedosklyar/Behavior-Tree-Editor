@@ -18,6 +18,9 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
     {
         this.node = node;
         this.title = node.name;
+        //Add "?" to the end of the ConditionNode`s title
+        if (this.node is ConditionNode)
+            this.title += "?";
         this.viewDataKey = node.guid;
 
         style.left = node.position.x;

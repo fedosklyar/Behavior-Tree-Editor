@@ -26,7 +26,7 @@ public class Blackboard : ScriptableObject
 
     private Dictionary<string, object> _runtimeData = new();
 
-    private void Awake() => PopulateFromEntries();
+    //private void Awake() => PopulateFromEntries();
 
     public void PopulateFromEntries()
     {
@@ -35,8 +35,8 @@ public class Blackboard : ScriptableObject
         {
             object value = e.valueType switch
             {
-                BlackboardValueType.Int        => int.TryParse(e.primitiveValue, out int i)       ? i     : 0,
-                
+                BlackboardValueType.Int => int.TryParse(e.primitiveValue, out int i) ? i : 0,
+
                 //to make both coma and dot valid
                 BlackboardValueType.Float => float.TryParse(e.primitiveValue,
                 System.Globalization.NumberStyles.Float,
@@ -46,13 +46,13 @@ public class Blackboard : ScriptableObject
                 BlackboardValueType.Bool =>
                 e.primitiveValue.Trim().ToLower() switch
                 {
-                    "true" or "1"  => true,
+                    "true" or "1" => true,
                     "false" or "0" => false,
                     _ => false
                 },
 
-                BlackboardValueType.String     => e.primitiveValue,
-                BlackboardValueType.Transform  => e.objectValue as Transform,
+                BlackboardValueType.String => e.primitiveValue,
+                BlackboardValueType.Transform => e.objectValue as Transform,
                 BlackboardValueType.GameObject => e.objectValue as GameObject,
                 _ => null
             };
@@ -81,5 +81,15 @@ public class Blackboard : ScriptableObject
         blackboard._runtimeData = new Dictionary<string, object>();
         blackboard.PopulateFromEntries();
         return blackboard;
+    }
+
+    public Dictionary<string, object> getDictionary()
+    {
+        return this._runtimeData;
+    }
+
+    public void AddValues(List<BlackboardEntry> newValues)
+    {
+        this.entries.AddRange(newValues);
     }
 }

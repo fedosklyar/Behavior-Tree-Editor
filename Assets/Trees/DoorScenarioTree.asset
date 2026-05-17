@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-5273598568990830310
+--- !u!114 &-7911659010916058876
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,17 +10,60 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4fd4fee549ca3544a966a739a0e51325, type: 3}
-  m_Name: DoorsOpen
+  m_Name: DoorsOpenNode
   m_EditorClassIdentifier: 
   state: 0
   started: 0
-  guid: c5fdd95fbfdefad4691e957db68ac95b
-  position: {x: -282.40005, y: 108.62002}
+  guid: 0f1ff9fdfb1720947baa15268614e791
+  position: {x: -296.04538, y: 109.59995}
   blackboard: {fileID: 0}
   agent: {fileID: 0}
   description: 
   invert: 0
-  objectKey: 
+  objectKey: doors
+--- !u!114 &-5513249283359273342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c49a86dd0d300d4baa12f0a39812337, type: 3}
+  m_Name: OpenDoorsNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 469779a3b4945d04b80e21d13cfda157
+  position: {x: 390.56067, y: 109.6}
+  blackboard: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  objectKey: doors
+  openingTime: 1
+--- !u!114 &-3947330946496722469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a563f57070c8c1e41873b89be14ef8c8, type: 3}
+  m_Name: MoveNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: f625de577dd7ce441b3c18ef9a26e4e1
+  position: {x: 216.19681, y: 109.60004}
+  blackboard: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  transfromKey: doorsTransform
+  speed: 4
+  offset: 1.5
 --- !u!114 &-1462899683536666349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,7 +105,11 @@ MonoBehaviour:
   - {fileID: -1462899683536666349}
   - {fileID: 3350160573299381890}
   - {fileID: 1258855477558965253}
-  - {fileID: -5273598568990830310}
+  - {fileID: 5087841743806463425}
+  - {fileID: -7911659010916058876}
+  - {fileID: -3947330946496722469}
+  - {fileID: -5513249283359273342}
+  - {fileID: 7447197077783541557}
   blackboard: {fileID: 11400000, guid: f501dc276b12b224bad9ea65630188c3, type: 2}
 --- !u!114 &1258855477558965253
 MonoBehaviour:
@@ -79,11 +126,14 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: e9ade1ec48abae04fb0f4b610be9b5be
-  position: {x: 243.1101, y: -105.18033}
+  position: {x: 291.1999, y: -101.58181}
   blackboard: {fileID: 0}
   agent: {fileID: 0}
   description: 
-  children: []
+  children:
+  - {fileID: -3947330946496722469}
+  - {fileID: -5513249283359273342}
+  - {fileID: 7447197077783541557}
 --- !u!114 &3350160573299381890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,12 +149,35 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: f57158229a8c46b42a09a9f21de3b75f
-  position: {x: -132.79999, y: -104.8}
+  position: {x: -177.60004, y: -122.37276}
   blackboard: {fileID: 0}
   agent: {fileID: 0}
   description: 
   children:
-  - {fileID: -5273598568990830310}
+  - {fileID: -7911659010916058876}
+  - {fileID: 5087841743806463425}
+--- !u!114 &5087841743806463425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a563f57070c8c1e41873b89be14ef8c8, type: 3}
+  m_Name: MoveNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: d898749c5c4b4974ca5c9a4fba14cb71
+  position: {x: -27.199982, y: 109.60002}
+  blackboard: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  transfromKey: enemyTransform
+  speed: 4
+  offset: 1.5
 --- !u!114 &6724052787826397761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,3 +198,25 @@ MonoBehaviour:
   agent: {fileID: 0}
   description: 
   child: {fileID: -1462899683536666349}
+--- !u!114 &7447197077783541557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a563f57070c8c1e41873b89be14ef8c8, type: 3}
+  m_Name: MoveNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 0adf3750c5c834f419e896c1e80c3834
+  position: {x: 606.9101, y: 109.60001}
+  blackboard: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  transfromKey: enemyTransform
+  speed: 4
+  offset: 1.5

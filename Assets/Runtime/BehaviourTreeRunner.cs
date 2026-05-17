@@ -14,7 +14,11 @@ public class BehaviourTreeRunner : MonoBehaviour
     void Start()
     {
         tree = tree.Clone();
-        tree.Bind(GetComponent<AiAgent>()); //The Both the Runner and the AiAgent should be attached to the GameObject 
+        tree.Bind(GetComponent<AiAgent>()); //Both the Runner and the AiAgent should be attached to the GameObject 
+
+        //Update blackboard
+        tree.blackboard.AddValues(localValues);
+        tree.blackboard.PopulateFromEntries();
     }
 
     void Update()
