@@ -51,5 +51,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Behavior Tree Tutorial.sln"
+    "dotnet.defaultSolution": "Behavior Tree Editor.sln"
 }
