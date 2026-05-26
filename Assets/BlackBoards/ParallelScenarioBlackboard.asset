@@ -10,10 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e38d824398f39a40a27af7a8923d15e, type: 3}
-  m_Name: DoorScenarioBlackboard
+  m_Name: ParallelScenarioBlackboard
   m_EditorClassIdentifier: 
-  entries:
-  - key: 
-    valueType: 0
-    primitiveValue: 
-    objectValue: {fileID: 0}
+  entries: []
