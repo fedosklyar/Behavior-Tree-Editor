@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[NodeInfo("Move Left", "Action/Movement/Move Left")]
 public class MoveLeftNode : ActionNode
 {
     public float speed;
@@ -17,17 +18,17 @@ public class MoveLeftNode : ActionNode
 
     protected override void OnStop()
     {
-        
+
     }
 
     protected override State OnUpdate()
     {
-        if(!objectsTransform)
+        if (!objectsTransform)
             return State.Failure;
-        
+
         elapsed += Time.deltaTime;
 
-        objectsTransform.position += - objectsTransform.right * speed * Time.deltaTime;
+        objectsTransform.position += -objectsTransform.right * speed * Time.deltaTime;
 
         if (elapsed > time)
             return State.Success;

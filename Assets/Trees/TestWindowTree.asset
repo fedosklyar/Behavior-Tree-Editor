@@ -1,0 +1,148 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8517815616621555650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea4ccf87da1c8c34f9b05a78b0d0c1fa, type: 3}
+  m_Name: DebugLogNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: f3dbab9429a136d4f8a22cc34d899d8e
+  position: {x: 94.588486, y: 305.99997}
+  blackboard: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  message: Debug 1
+--- !u!114 &-6784426139759475818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fd4fee549ca3544a966a739a0e51325, type: 3}
+  m_Name: DoorsOpenNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 9872161f457707040b74b26704f0d932
+  position: {x: -128, y: 306}
+  blackboard: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  invert: 1
+  objectKey: directionalLightObject
+--- !u!114 &-2488563159813317542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d402705c26db8f499bfce039a7c3dad, type: 3}
+  m_Name: SequencerNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 3a3ca9c3c37b59b489c67041b4e7a22f
+  position: {x: 0, y: 141}
+  blackboard: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  children:
+  - {fileID: -6784426139759475818}
+  - {fileID: -8517815616621555650}
+  - {fileID: 4694011941540108394}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61fdffb428296844390d81be059898c5, type: 3}
+  m_Name: TestWindowTree
+  m_EditorClassIdentifier: 
+  rootNode: {fileID: 1781390834317601044}
+  treeState: 0
+  nodes:
+  - {fileID: 1781390834317601044}
+  - {fileID: 4694011941540108394}
+  - {fileID: -8517815616621555650}
+  - {fileID: -2488563159813317542}
+  - {fileID: 5550148695323955542}
+  - {fileID: -6784426139759475818}
+  blackboard: {fileID: 11400000, guid: f501dc276b12b224bad9ea65630188c3, type: 2}
+--- !u!114 &1781390834317601044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53408f9e862868e419c9af8e16ea5ecd, type: 3}
+  m_Name: RootNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: bf39f251888b4564da33ca0550b6f2c6
+  position: {x: -0.000102996826, y: -161.03249}
+  blackboard: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  child: {fileID: 5550148695323955542}
+--- !u!114 &4694011941540108394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea4ccf87da1c8c34f9b05a78b0d0c1fa, type: 3}
+  m_Name: DebugLogNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: ea4631971f3158a4481f5fd9139f9f97
+  position: {x: 315.74844, y: 305.99997}
+  blackboard: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  message: Debug 2
+--- !u!114 &5550148695323955542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b0a6c922108bcb41902968632f747bd, type: 3}
+  m_Name: RepeatNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 1717176a57fb39c49b1813fa5e520065
+  position: {x: -0.00006198883, y: -14.2550125}
+  blackboard: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  child: {fileID: -2488563159813317542}

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[NodeInfo("Suquencer", "Composite/Sequncer")]
 public class SequencerNode : CompositeNode
 {
     int current;
@@ -12,7 +13,7 @@ public class SequencerNode : CompositeNode
 
     protected override void OnStop()
     {
-        
+
     }
 
     protected override State OnUpdate()

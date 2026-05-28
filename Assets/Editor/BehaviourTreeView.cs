@@ -5,6 +5,7 @@ using System.Linq;
 using JetBrains.Annotations;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
+using UnityEngine;
 using UnityEngine.UIElements;
 
 public class BehaviourTreeView : GraphView
@@ -12,6 +13,10 @@ public class BehaviourTreeView : GraphView
     public Action<NodeView> OnNodeSelected;
     public new class UxmlFactory : UxmlFactory<BehaviourTreeView, UxmlTraits> { }
     BehaviourTree tree; //current tree for editing
+
+    private WindowSearchProvider searchProvider;
+
+    public BehaviourTreeEditor window;
     public BehaviourTreeView()
     {
         Insert(0, new GridBackground());
@@ -24,6 +29,31 @@ public class BehaviourTreeView : GraphView
         var styleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>("Assets/Editor/BehaviourTreeEditor.uss");
         styleSheets.Add(styleSheet); //vorsicht! Can be missed
 
+        searchProvider = ScriptableObject.CreateInstance<WindowSearchProvider>();
+        searchProvider.graphView = this;
+
+        this.RegisterCallback<MouseDownEvent>(evt =>
+        {
+            if (evt.button == 1)
+            {
+                var screenPos = evt.mousePosition + new Vector2(window.position.x, window.position.y);
+                ShowSearchWindow(new NodeCreationContext() 
+                { 
+                    screenMousePosition = screenPos
+                });
+                evt.StopPropagation();
+            }
+        });
+
+
+        //To prevent the contextual menu from appearing
+        this.RegisterCallback<ContextualMenuPopulateEvent>(evt =>
+        {
+            evt.StopPropagation();
+            evt.menu.MenuItems().Clear();
+        });
+        // this.nodeCreationRequest = ShowSearchWindow;
+
         Undo.undoRedoPerformed += OnUndoRedo;
     }
 
@@ -34,16 +64,25 @@ public class BehaviourTreeView : GraphView
         AssetDatabase.SaveAssets();
     }
 
+    private void ShowSearchWindow(NodeCreationContext obj)
+    {
+        searchProvider.target = (VisualElement)focusController.focusedElement;
+        SearchWindow.Open(new SearchWindowContext(obj.screenMousePosition), searchProvider);
+    }
+
     internal void PopulateView(BehaviourTree tree)
     {
+        Debug.Log("Within Populate view()");
         this.tree = tree;
 
         if (tree.rootNode == null)
         {
+            Debug.Log("Root node happened to be null");
             tree.rootNode = tree.CreateNode(typeof(RootNode)) as RootNode;
             EditorUtility.SetDirty(tree);
             AssetDatabase.SaveAssets();
         }
+
         graphViewChanged -= OnGraphViewChanged;
         DeleteElements(graphElements);
         graphViewChanged += OnGraphViewChanged;
@@ -52,6 +91,7 @@ public class BehaviourTreeView : GraphView
         //Creates node view
         foreach (Node node in tree.nodes)
         {
+            Debug.Log($"The node type: {node.GetType()} and the name: {node.name}");
             CreateNodeView(node);
         }
 
@@ -128,55 +168,58 @@ public class BehaviourTreeView : GraphView
         return graphViewChange;
     }
 
-    public override void BuildContextualMenu(ContextualMenuPopulateEvent evt)
-    {
-        //base.BuildContextualMenu(evt);
-        {
-            var types = TypeCache.GetTypesDerivedFrom<ActionNode>();
-            foreach (var type in types)
-            {
-                evt.menu.AppendAction($"[{type.BaseType.Name}] {type.Name}", (a) => CreateNode(type));
-            }
-        }
+    // public override void BuildContextualMenu(ContextualMenuPopulateEvent evt)
+    // {
+    //     //base.BuildContextualMenu(evt);
+    //     {
+    //         var types = TypeCache.GetTypesDerivedFrom<ActionNode>();
+    //         foreach (var type in types)
+    //         {
+    //             evt.menu.AppendAction($"[{type.BaseType.Name}] {type.Name}", (a) => CreateNode(type));
+    //         }
+    //     }
 
 
-        {
-            var types = TypeCache.GetTypesDerivedFrom<CompositeNode>();
-            foreach (var type in types)
-            {
-                evt.menu.AppendAction($"[{type.BaseType.Name}] {type.Name}", (a) => CreateNode(type));
-            }
-        }
+    //     {
+    //         var types = TypeCache.GetTypesDerivedFrom<CompositeNode>();
+    //         foreach (var type in types)
+    //         {
+    //             evt.menu.AppendAction($"[{type.BaseType.Name}] {type.Name}", (a) => CreateNode(type));
+    //         }
+    //     }
 
-        {
-            var types = TypeCache.GetTypesDerivedFrom<DecoratorNode>();
-            foreach (var type in types)
-            {
-                evt.menu.AppendAction($"[{type.BaseType.Name}] {type.Name}", (a) => CreateNode(type));
-            }
-        }
+    //     {
+    //         var types = TypeCache.GetTypesDerivedFrom<DecoratorNode>();
+    //         foreach (var type in types)
+    //         {
+    //             evt.menu.AppendAction($"[{type.BaseType.Name}] {type.Name}", (a) => CreateNode(type));
+    //         }
+    //     }
 
-        {
-            var types = TypeCache.GetTypesDerivedFrom<ConditionNode>();
-            foreach (var type in types)
-            {
-                evt.menu.AppendAction($"[{type.BaseType.Name}] {type.Name}", (a) => CreateNode(type));
-            }
-        }
-    }
+    //     {
+    //         var types = TypeCache.GetTypesDerivedFrom<ConditionNode>();
+    //         foreach (var type in types)
+    //         {
+    //             evt.menu.AppendAction($"[{type.BaseType.Name}] {type.Name}", (a) => CreateNode(type));
+    //         }
+    //     }
+    // }
 
-    void CreateNode(System.Type type)
+    public void CreateNode(System.Type type, Vector2 mousePosition)
     {
         Node node = tree.CreateNode(type);
+        node.position = mousePosition;
         CreateNodeView(node);
     }
 
     void CreateNodeView(Node node)
     {
+        //Node node = tree.CreateNode(type);
         NodeView nodeView = new NodeView(node);
         nodeView.OnNodeSelected = OnNodeSelected;
         AddElement(nodeView);
     }
+
 
     public void UpdateNodeState()
     {

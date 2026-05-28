@@ -73,6 +73,7 @@ public class BehaviourTreeEditor : EditorWindow
         };
 
         treeView.OnNodeSelected = OnNodeSelectionChanged;
+        treeView.window = this;
 
         OnSelectionChange();
     }
@@ -125,6 +126,8 @@ public class BehaviourTreeEditor : EditorWindow
         {
             if (tree)
             {
+                Debug.Log($"tree: {tree.name} has {tree.nodes.Count} nodes");
+                Debug.Log($"tree view/editor: {treeView.name} has window: {treeView.window != null}");
                 treeView.PopulateView(tree);
             }
         }

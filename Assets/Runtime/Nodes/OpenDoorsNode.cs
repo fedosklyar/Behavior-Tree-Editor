@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
+[NodeInfo("Open Doors", "Action/Open Doors")]
 public class OpenDoorsNode : ActionNode
 {
     public string objectKey;
@@ -19,7 +20,7 @@ public class OpenDoorsNode : ActionNode
 
     protected override void OnStop()
     {
-        
+
     }
 
     protected override State OnUpdate()

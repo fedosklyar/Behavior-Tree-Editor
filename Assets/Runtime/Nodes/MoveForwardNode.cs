@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+[NodeInfo("Move Forward", "Action/Movement/Move Forward")]
 public class MoveForwardNode : ActionNode
 {
     public float speed;
@@ -14,14 +15,14 @@ public class MoveForwardNode : ActionNode
 
     protected override void OnStop()
     {
-        
+
     }
 
     protected override State OnUpdate()
     {
-        if(!objectsTransform)
+        if (!objectsTransform)
             return State.Failure;
-            
+
         objectsTransform.position += objectsTransform.forward * speed * Time.deltaTime;
         return State.Running;
     }

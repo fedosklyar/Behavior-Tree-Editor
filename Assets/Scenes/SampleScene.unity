@@ -275,7 +275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useCharacterForward: 0
   sprintJoystick: 332
-  sprintKeyboard: 32
+  sprintKeyboard: 304
 --- !u!1 &252704742
 GameObject:
   m_ObjectHideFlags: 3
@@ -1447,6 +1447,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2123546576}
   - component: {fileID: 2123546575}
+  - component: {fileID: 2123546577}
   m_Layer: 0
   m_Name: BT Runner Example
   m_TagString: Untagged
@@ -1461,12 +1462,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2123546574}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6442a678afa8b7b46ab33f00804b16bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tree: {fileID: 11400000, guid: 92f0e7d913b0eeb4db289b8c3b0a24e2, type: 2}
+  tree: {fileID: 11400000, guid: 7d19c944283256748a4759b089584c8b, type: 2}
+  localValues:
+  - key: directionalLightObject
+    valueType: 5
+    primitiveValue: 
+    objectValue: {fileID: 705507993}
 --- !u!4 &2123546576
 Transform:
   m_ObjectHideFlags: 0
@@ -1482,6 +1488,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2123546577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123546574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2f361960c9d3fb48a0591d7f783cadd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[NodeInfo("Move To Target", "Action/Movement/Move To Target")]
 public class MoveNode : ActionNode
 {
     public string transfromKey;
@@ -29,8 +30,8 @@ public class MoveNode : ActionNode
         Vector3 direction = targetPosition - agent.gameObject.transform.position;
         direction = direction.normalized;
 
-        this.agent.transform.position += direction * speed *Time.deltaTime;
-        
+        this.agent.transform.position += direction * speed * Time.deltaTime;
+
         if ((this.agent.transform.position - targetPosition).magnitude < offset)
             return State.Success;
 

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[NodeInfo("Debug Log", "Action/Debug Log Console")]
 public class DebugLogNode : ActionNode
 {
     public string message;

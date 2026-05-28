@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[NodeInfo("Wait", "Action/Wait")]
 public class WaitNode : ActionNode
 {
     public float duration = 1;

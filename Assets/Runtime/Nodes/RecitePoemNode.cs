@@ -11,6 +11,7 @@ public class PoetryPiece
     public float timeForPiece;
 }
 
+[NodeInfo("Recite Poem", "Action/Recite Poem")]
 public class RecitePoemNode : ActionNode
 {
 
