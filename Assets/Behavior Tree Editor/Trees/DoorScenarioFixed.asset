@@ -1,0 +1,244 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7881274336891508173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d402705c26db8f499bfce039a7c3dad, type: 3}
+  m_Name: SequencerNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 1
+  guid: 75b8bfb2036344145a482927b006e52c
+  position: {x: -170.39995, y: 283.19995}
+  blackboard: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  children:
+  - {fileID: -2079971101778626903}
+  - {fileID: 781847678201657565}
+--- !u!114 &-7525092614282289729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb00da0d9757e9f4d8810ec3aa371e92, type: 3}
+  m_Name: MoveLeftNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 4bd4e54aa0206814281108efd6b6c3b5
+  position: {x: -906.68066, y: 846.2683}
+  blackboard: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  speed: 5
+  time: 3
+--- !u!114 &-6170159996433499971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a563f57070c8c1e41873b89be14ef8c8, type: 3}
+  m_Name: MoveNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 7d63485a2d34c7c48a29423b7f5b160d
+  position: {x: 150.40004, y: 456.8}
+  blackboard: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  transfromKey: doorsTransform
+  speed: 4
+  offset: 1.5
+--- !u!114 &-2079971101778626903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fd4fee549ca3544a966a739a0e51325, type: 3}
+  m_Name: DoorsOpenNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 1
+  guid: 73492c29c1647914c92e27c2de6e5987
+  position: {x: -320.80023, y: 456.80002}
+  blackboard: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  invert: 0
+  objectKey: doors
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61fdffb428296844390d81be059898c5, type: 3}
+  m_Name: DoorScenarioFixed
+  m_EditorClassIdentifier: 
+  rootNode: {fileID: 1913110748741262429}
+  treeState: 0
+  nodes:
+  - {fileID: 1913110748741262429}
+  - {fileID: 2738657851343988904}
+  - {fileID: 517669424488986229}
+  - {fileID: -7881274336891508173}
+  - {fileID: -2079971101778626903}
+  - {fileID: -6170159996433499971}
+  - {fileID: 714350636146241245}
+  - {fileID: 3040283480681625645}
+  - {fileID: -7525092614282289729}
+  - {fileID: 781847678201657565}
+  blackboard: {fileID: 11400000, guid: f501dc276b12b224bad9ea65630188c3, type: 2}
+--- !u!114 &517669424488986229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d402705c26db8f499bfce039a7c3dad, type: 3}
+  m_Name: SequencerNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 8599e9515e067014b91408def36e9f2e
+  position: {x: 276.76, y: 283.91998}
+  blackboard: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  children:
+  - {fileID: -6170159996433499971}
+  - {fileID: 714350636146241245}
+  - {fileID: 3040283480681625645}
+--- !u!114 &714350636146241245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c49a86dd0d300d4baa12f0a39812337, type: 3}
+  m_Name: OpenDoorsNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: aed3c57ae7b51b945a9d5c605d239942
+  position: {x: 335.9999, y: 456.79996}
+  blackboard: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  objectKey: doors
+  openingTime: 2
+--- !u!114 &781847678201657565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a563f57070c8c1e41873b89be14ef8c8, type: 3}
+  m_Name: MoveNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 5a4b0c2ee3ba219489123dedd1581f21
+  position: {x: -53.879974, y: 457}
+  blackboard: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  transfromKey: enemyTransform
+  speed: 4
+  offset: 1.5
+--- !u!114 &1913110748741262429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53408f9e862868e419c9af8e16ea5ecd, type: 3}
+  m_Name: RootNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 1
+  guid: ea1283afb1459ee4290e668279a1a492
+  position: {x: -0.000013860321, y: -44.499992}
+  blackboard: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  child: {fileID: 2738657851343988904}
+--- !u!114 &2738657851343988904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 976ed73faf2b9224bb7a5c076b7b635a, type: 3}
+  m_Name: SelectorNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 1
+  guid: 579e439949c20e64993eec4b6590d473
+  position: {x: -0.000060273742, y: 119.917946}
+  blackboard: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  children:
+  - {fileID: -7881274336891508173}
+  - {fileID: 517669424488986229}
+--- !u!114 &3040283480681625645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a563f57070c8c1e41873b89be14ef8c8, type: 3}
+  m_Name: MoveNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: ce733fe946858e54db0002b696c962ae
+  position: {x: 525.52734, y: 456.8}
+  blackboard: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  transfromKey: enemyTransform
+  speed: 4
+  offset: 1.5

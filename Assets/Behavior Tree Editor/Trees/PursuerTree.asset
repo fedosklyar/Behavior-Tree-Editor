@@ -1,0 +1,154 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8212977220214218030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d402705c26db8f499bfce039a7c3dad, type: 3}
+  m_Name: SequencerNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 12da92d4a5c23b04a873e8da00ff5f90
+  position: {x: -150.39995, y: 287.198}
+  blackboard: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  children:
+  - {fileID: 1420250151124237696}
+  - {fileID: -4032037978708017666}
+--- !u!114 &-4032037978708017666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 602d8ee0052d70f4a925121cd77a08e6, type: 3}
+  m_Name: CanSeeTargetNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 7c73394913f842443abcc535ddb092d4
+  position: {x: -265.48224, y: 447.19998}
+  blackboard: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  invert: 0
+  targetKey: squirrelTransform
+  viewDistance: 10
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!114 &-803313562859490909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9650dc264fb26546a5f3ea56d66f8f3, type: 3}
+  m_Name: WanderNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 0ac40ced7bb36e74c85ba3659cc4a683
+  position: {x: 204.85672, y: 287.19998}
+  blackboard: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  wanderRadius: 10
+  reachedThreshold: 1
+--- !u!114 &-293507969133254744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53408f9e862868e419c9af8e16ea5ecd, type: 3}
+  m_Name: RootNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 8d4fcd49bea18db498e1884e6e9746ac
+  position: {x: -0.000010426331, y: 1.7336082}
+  blackboard: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  child: {fileID: 7273328855318459677}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61fdffb428296844390d81be059898c5, type: 3}
+  m_Name: PursuerTree
+  m_EditorClassIdentifier: 
+  rootNode: {fileID: -293507969133254744}
+  treeState: 0
+  nodes:
+  - {fileID: -293507969133254744}
+  - {fileID: 7273328855318459677}
+  - {fileID: -8212977220214218030}
+  - {fileID: 1420250151124237696}
+  - {fileID: -803313562859490909}
+  - {fileID: -4032037978708017666}
+  blackboard: {fileID: 11400000, guid: 3c099304e96ff4c4599d7380155f6eca, type: 2}
+--- !u!114 &1420250151124237696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf7b3c6a8c02d4b4c911fb53187e63a4, type: 3}
+  m_Name: ChaseNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: be7a638edbf0e9e4b9ed4aea49e8b131
+  position: {x: -47.365067, y: 447.45242}
+  blackboard: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  targetKey: squirrelTransform
+--- !u!114 &7273328855318459677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 976ed73faf2b9224bb7a5c076b7b635a, type: 3}
+  m_Name: SelectorNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 37d3af12e4dfc0148b99a5888c286f39
+  position: {x: 0, y: 142.07428}
+  blackboard: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  children:
+  - {fileID: -8212977220214218030}
+  - {fileID: -803313562859490909}

@@ -75,3 +75,6 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 /Assets/Synty
 /Assets/Samples
+/Assets/Behavior Tree Editor/Samples/Cinemachine/2.10.7/Cinemachine Example Scenes/Scenes/2D
+/Assets/Behavior Tree Editor/Samples
+/Assets/Behavior Tree Editor/Synty

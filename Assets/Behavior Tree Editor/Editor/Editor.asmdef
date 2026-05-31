@@ -1,0 +1,6 @@
+{
+	"name": "Editor",
+	"references": [
+		"Runtime"
+	]
+}
