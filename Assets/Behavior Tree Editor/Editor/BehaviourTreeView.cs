@@ -77,7 +77,7 @@ public class BehaviourTreeView : GraphView
 
         if (tree.rootNode == null)
         {
-            Debug.Log("Root node happened to be null");
+            // Debug.Log("Root node happened to be null");
             tree.rootNode = tree.CreateNode(typeof(RootNode)) as RootNode;
             EditorUtility.SetDirty(tree);
             AssetDatabase.SaveAssets();
@@ -91,7 +91,7 @@ public class BehaviourTreeView : GraphView
         //Creates node view
         foreach (Node node in tree.nodes)
         {
-            Debug.Log($"The node type: {node.GetType()} and the name: {node.name}");
+            // Debug.Log($"The node type: {node.GetType()} and the name: {node.name}");
             CreateNodeView(node);
         }
 

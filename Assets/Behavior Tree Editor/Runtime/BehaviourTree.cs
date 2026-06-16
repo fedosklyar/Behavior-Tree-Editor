@@ -22,6 +22,12 @@ public class BehaviourTree : ScriptableObject
             treeState = rootNode.Update();
         }
 
+        if (treeState == Node.State.Success || treeState == Node.State.Failure)
+        {
+            treeState = Node.State.Running;
+            rootNode.state = Node.State.Running; // reset root to allow re-entry
+        }
+
         return treeState;
     }
 

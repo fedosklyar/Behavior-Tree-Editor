@@ -8,7 +8,7 @@ public class SequencerNode : CompositeNode
     int current;
     protected override void OnStart()
     {
-        current = 0;
+        //current = 0;
     }
 
     protected override void OnStop()
@@ -18,18 +18,19 @@ public class SequencerNode : CompositeNode
 
     protected override State OnUpdate()
     {
-        var child = children[current];
-        switch (child.Update())
+        foreach (var child in children)
         {
-            case State.Running:
-                return State.Running;
-            case State.Failure:
-                return State.Failure;
-            case State.Success:
-                ++current;
-                break;
+            switch (child.Update())
+            {
+                case State.Running:
+                    return State.Running;
+                case State.Failure:
+                    return State.Failure;
+                case State.Success:
+                    continue; // move to next child in same tick
+            }
         }
-
-        return current == children.Count ? State.Success : State.Running;
+        
+        return State.Success; // all children succeeded
     }
 }

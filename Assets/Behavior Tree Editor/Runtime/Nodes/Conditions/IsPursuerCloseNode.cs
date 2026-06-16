@@ -10,6 +10,7 @@ public class IsPursuerCloseNode : ConditionNode
     protected override bool CheckCondition()
     {
         var pursuer = blackboard[pursuerKey] as Transform;
+
         if (!pursuer)
         {
             return false;

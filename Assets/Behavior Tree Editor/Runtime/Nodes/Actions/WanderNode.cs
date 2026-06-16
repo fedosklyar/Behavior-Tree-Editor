@@ -9,7 +9,7 @@ using UnityEngine.UI;
 [NodeInfo("Wander", "Action/Movement/Wander")]
 public class WanderNode : ActionNode
 {
-    public float wanderRadius = 10f;
+    public float wanderRadius = 2f; //used to be 10
     public float reachedThreshold = 1f;
     protected override void OnStart()
     {
@@ -25,6 +25,7 @@ public class WanderNode : ActionNode
         if (!agent.navMeshAgent.pathPending && agent.navMeshAgent.remainingDistance < reachedThreshold)
         {
             SetNewDestination();
+            return State.Success;
         }
 
         return State.Running;

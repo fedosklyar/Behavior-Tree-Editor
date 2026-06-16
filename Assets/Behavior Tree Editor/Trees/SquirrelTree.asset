@@ -1,134 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-3850058650127212232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d402705c26db8f499bfce039a7c3dad, type: 3}
-  m_Name: SequencerNode
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: 6ec92bc94fc45484290d2e25e18ab4ba
-  position: {x: -160, y: 263.19998}
-  blackboard: {fileID: 0}
-  agent: {fileID: 0}
-  description: 
-  children:
-  - {fileID: 8423796294910860736}
-  - {fileID: 931226467850820974}
---- !u!114 &-3728579065048478268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 976ed73faf2b9224bb7a5c076b7b635a, type: 3}
-  m_Name: SelectorNode
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: 09df26ce605a2634e9e2eefd668791f2
-  position: {x: 10.080055, y: 141.10641}
-  blackboard: {fileID: 0}
-  agent: {fileID: 0}
-  description: 
-  children:
-  - {fileID: -3850058650127212232}
-  - {fileID: -2579554386838429038}
---- !u!114 &-2579554386838429038
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9650dc264fb26546a5f3ea56d66f8f3, type: 3}
-  m_Name: WanderNode
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: 0c5d47b1b534f98459872ecc3ad180e2
-  position: {x: 194.98798, y: 263.19998}
-  blackboard: {fileID: 0}
-  agent: {fileID: 0}
-  description: 
-  wanderRadius: 10
-  reachedThreshold: 1
---- !u!114 &-2365966967961872863
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53408f9e862868e419c9af8e16ea5ecd, type: 3}
-  m_Name: RootNode
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: bf178983386104f4985a6146193bbda2
-  position: {x: 0, y: 0}
-  blackboard: {fileID: 0}
-  agent: {fileID: 0}
-  description: 
-  child: {fileID: -3728579065048478268}
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61fdffb428296844390d81be059898c5, type: 3}
-  m_Name: SquirrelTree
-  m_EditorClassIdentifier: 
-  rootNode: {fileID: -2365966967961872863}
-  treeState: 0
-  nodes:
-  - {fileID: -2365966967961872863}
-  - {fileID: -3728579065048478268}
-  - {fileID: -3850058650127212232}
-  - {fileID: 8423796294910860736}
-  - {fileID: 931226467850820974}
-  - {fileID: -2579554386838429038}
-  blackboard: {fileID: 11400000, guid: c46c38b3a52aad740a09131f31122558, type: 2}
---- !u!114 &931226467850820974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 549d674b7c07d4144b57b3052b58f305, type: 3}
-  m_Name: FleeNode
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: cdcfd314762087540b8b3efc2b65c8c1
-  position: {x: -64.799805, y: 417.59995}
-  blackboard: {fileID: 0}
-  agent: {fileID: 0}
-  description: 
-  pursuerKey: pursuerTransform
-  fleeDistance: 10
---- !u!114 &8423796294910860736
+--- !u!114 &-9105004461388537577
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -142,11 +14,139 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   started: 0
-  guid: e0e0570dc633d4b4188f50e3200e6e4a
-  position: {x: -295.89392, y: 418.37518}
+  guid: bc043d1e088fa2246b24ecd483f52623
+  position: {x: -258.43817, y: 436.9522}
   blackboard: {fileID: 0}
   agent: {fileID: 0}
   description: 
   invert: 0
   pursuerKey: pursuerTransform
-  fleeDistance: 5
+  fleeDistance: 13
+--- !u!114 &-419403756841273022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53408f9e862868e419c9af8e16ea5ecd, type: 3}
+  m_Name: RootNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 40b17b0a97c39694b852522067f83de6
+  position: {x: 0, y: 0}
+  blackboard: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  child: {fileID: 6379665440581236569}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61fdffb428296844390d81be059898c5, type: 3}
+  m_Name: SquirrelTree
+  m_EditorClassIdentifier: 
+  rootNode: {fileID: -419403756841273022}
+  treeState: 0
+  nodes:
+  - {fileID: -419403756841273022}
+  - {fileID: 9115793626144021276}
+  - {fileID: -9105004461388537577}
+  - {fileID: 6379665440581236569}
+  - {fileID: 8571627037465279715}
+  - {fileID: 1095734279488097384}
+  blackboard: {fileID: 11400000, guid: c46c38b3a52aad740a09131f31122558, type: 2}
+--- !u!114 &1095734279488097384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f5eb61cf4957247be394826c99c4de, type: 3}
+  m_Name: FleeNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 11526d53c3b8a0a488a1a71d655426b5
+  position: {x: -15.69751, y: 437}
+  blackboard: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  pursuerKey: pursuerTransform
+  fleeDistance: 13
+--- !u!114 &6379665440581236569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 976ed73faf2b9224bb7a5c076b7b635a, type: 3}
+  m_Name: SelectorNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 90b26a4d436067041a7cf37014a17453
+  position: {x: -0.000010311815, y: 148.74901}
+  blackboard: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  children:
+  - {fileID: 8571627037465279715}
+  - {fileID: 9115793626144021276}
+--- !u!114 &8571627037465279715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d402705c26db8f499bfce039a7c3dad, type: 3}
+  m_Name: SequencerNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 0eda2aeed0ae31140a02369a6271ab70
+  position: {x: -150.00005, y: 276.99997}
+  blackboard: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  children:
+  - {fileID: -9105004461388537577}
+  - {fileID: 1095734279488097384}
+--- !u!114 &9115793626144021276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9650dc264fb26546a5f3ea56d66f8f3, type: 3}
+  m_Name: WanderNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: d861d2a64b071954d943ec3f597a018e
+  position: {x: 233.06955, y: 321}
+  blackboard: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  wanderRadius: 7
+  reachedThreshold: 1
